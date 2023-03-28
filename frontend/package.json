@@ -1,0 +1,65 @@
+{
+  "name": "frontend",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
+    "@mapbox/mapbox-gl-draw": "^1.4.0",
+    "@reduxjs/toolkit": "^1.9.3",
+    "@sentry/react": "^7.43.0",
+    "@sentry/tracing": "^7.43.0",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "@turf/area": "^6.5.0",
+    "@turf/bbox": "^6.5.0",
+    "@vitalets/google-translate-api": "^9.1.0",
+    "bootstrap": "5.3.0-alpha1",
+    "final-form": "^4.20.8",
+    "mapbox-gl": "^2.12.0",
+    "osm-auth": "^2.0.1",
+    "prettier": "^2.8.4",
+    "react": "^18.2.0",
+    "react-detect-click-outside": "^1.1.7",
+    "react-dom": "^18.2.0",
+    "react-final-form": "^6.5.9",
+    "react-redux": "^8.0.5",
+    "react-router-dom": "^6.7.0",
+    "react-scripts": "5.0.1",
+    "react-tooltip": "^5.8.3",
+    "web-vitals": "^2.1.4"
+  },
+  "scripts": {
+    "preparation": "bash -c \"if (test -a ../localizer.env); then grep -hs ^ ../localizer.env .env.expand > .env; else cp .env.expand .env; fi\"",
+    "start": "npm run preparation && react-scripts start",
+    "build": "npm run preparation && react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "lint": "eslint --ext .js,.jsx,.ts,.tsx --fix src/",
+    "extension": "react-scripts build && zip -r extension.zip build",
+    "prettier": "prettier --write 'src/**/*.js'"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all",
+      "not safari < 10",
+      "not chrome < 51",
+      "not android < 5",
+      "not ie < 12"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
